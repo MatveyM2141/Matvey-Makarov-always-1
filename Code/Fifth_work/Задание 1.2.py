@@ -1,8 +1,18 @@
 n = int(input())
-arr = list(map(int, input().split()))
-max_val = max(arr)
-min_val = min(arr)
-max_idx = arr.index(max_val)
-min_idx = arr.index(min_val)
-print(f"Максимум: {max_val} (индекс {max_idx})")
-print(f"Минимум: {min_val} (индекс {min_idx})")
+arr = [0] * n
+input_data = input().split()
+for i in range(n):
+    arr[i] = int(input_data[i])
+max_val = arr[0]
+min_val = arr[0]
+max_idx = 0
+min_idx = 0
+for i in range(1, n):
+    if arr[i] > max_val:
+        max_val = arr[i]
+        max_idx = i
+    if arr[i] < min_val:
+        min_val = arr[i]
+        min_idx = i
+print(max_val, ' ', max_idx)
+print(min_val, ' ', min_idx)
