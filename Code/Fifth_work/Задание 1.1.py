@@ -1,11 +1,14 @@
 n = int(input())
-arr = list(map(int, input().split()))
-total_sum = sum(arr)
+arr = [0] * n
+input_data = input().split()
+for i in range(n):
+    arr[i] = int(input_data[i])
+total_sum = 0
 total_product = 1
-for x in arr:
-    total_product *= x
+for i in range(n):
+    total_sum += arr[i]
+    total_product *= arr[i]
 average = total_sum / n
-print(f"Сумма: {total_sum}")
-print(f"Произведение: {total_product}")
-print(f"Среднее: {average:.2f}")
-
+print(total_sum)
+print(total_product)
+print(average)
