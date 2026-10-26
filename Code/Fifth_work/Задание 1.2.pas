@@ -1,23 +1,27 @@
-﻿var
-  n, i, max_val, min_val, max_idx, min_idx, x: integer;
+var
+  n, i, max_val, min_val, max_idx, min_idx: integer;
+  arr: array[1..1000] of integer;
 begin
   readln(n);
-  max_val := -MaxInt;
-  min_val := MaxInt;
   for i := 1 to n do
+    read(arr[i]);
+  max_val := arr[1];
+  min_val := arr[1];
+  max_idx := 1;
+  min_idx := 1;
+  for i := 2 to n do
   begin
-    read(x);
-    if x > max_val then
+    if arr[i] > max_val then
     begin
-      max_val := x;
-      max_idx := i - 1; // Вычитаем 1, так как в примере индексация с 0
+      max_val := arr[i];
+      max_idx := i;
     end;
-    if x < min_val then
+    if arr[i] < min_val then
     begin
-      min_val := x;
-      min_idx := i - 1; // Вычитаем 1
+      min_val := arr[i];
+      min_idx := i;
     end;
   end;
-  writeln('Максимум: ', max_val, ' (индекс ', max_idx, ')');
-  writeln('Минимум: ', min_val, ' (индекс ', min_idx, ')');
+  writeln('Максимум: ', max_val, ' (индекс ', max_idx - 1, ')');
+  writeln('Минимум: ', min_val, ' (индекс ', min_idx - 1, ')');
 end.
