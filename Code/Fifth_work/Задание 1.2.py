@@ -1,0 +1,8 @@
+n = int(input())
+arr = list(map(int, input().split()))
+max_val = max(arr)
+min_val = min(arr)
+max_idx = arr.index(max_val)
+min_idx = arr.index(min_val)
+print(f"Максимум: {max_val} (индекс {max_idx})")
+print(f"Минимум: {min_val} (индекс {min_idx})")

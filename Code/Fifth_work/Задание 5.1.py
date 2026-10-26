@@ -1,0 +1,5 @@
+n = int(input())
+arr = list(map(int, input().split()))
+k = int(input())
+arr.pop(k-1)
+print(*arr)

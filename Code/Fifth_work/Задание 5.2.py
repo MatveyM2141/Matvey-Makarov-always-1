@@ -1,0 +1,6 @@
+n = int(input())
+arr = list(map(int, input().split()))
+x = int(input())
+k = int(input())
+arr.insert(k-1, x)
+print(*arr)
