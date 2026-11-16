@@ -1,0 +1,5 @@
+S = input("Введите строку: ")
+print(len(S))
+print(S[0])
+print(S[-1])
+print(S.upper())
